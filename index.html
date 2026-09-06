@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسويمة | TASWIMA</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f7f8;
+      color: #1d1d1f;
+    }
+
+    .hero {
+      background: #12372a;
+      color: white;
+      padding: 55px 22px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 38px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .english {
+      font-size: 14px;
+      letter-spacing: 4px;
+      opacity: .8;
+    }
+
+    .hero h1 {
+      font-size: 27px;
+      margin: 30px 0 10px;
+    }
+
+    .hero p {
+      line-height: 1.8;
+      opacity: .9;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: auto;
+      padding: 25px 18px 50px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .step {
+      background: white;
+      padding: 16px 8px;
+      text-align: center;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 22px;
+      color: #12372a;
+      margin-bottom: 7px;
+    }
+
+    .form-card {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #12372a;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 18px 0 7px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 16px;
+      border: 0;
+      border-radius: 12px;
+      background: #12372a;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <div class="logo">تسويمة</div>
+  <div class="english">TASWIMA</div>
+
+  <h1>اطلبها… وخلي العروض تجيك</h1>
+
+  <p>
+    بدل ما تتواصل مع عدة موردين،
+    أرسل احتياجك مرة واحدة ونساعدك في الحصول
+    على عروض مناسبة من موردين في جدة.
+  </p>
+
+</section>
+
+<div class="container">
+
+  <div class="steps">
+
+    <div class="step">
+      <strong>1</strong>
+      ارسل طلبك
+    </div>
+
+    <div class="step">
+      <strong>2</strong>
+      نستقبل العروض
+    </div>
+
+    <div class="step">
+      <strong>3</strong>
+      قارن واختار
+    </div>
+
+  </div>
+
+  <div class="form-card">
+
+    <h2>اطلب تسويمة</h2>
+
+    <form>
+
+      <label>إيش تحتاج؟</label>
+
+      <select required>
+        <option value="">اختر المنتج</option>
+        <option>أكواب ورقية</option>
+        <option>أكواب بلاستيك</option>
+        <option>علب طعام</option>
+        <option>علب برجر</option>
+        <option>علب بيتزا</option>
+        <option>أكياس ورقية</option>
+        <option>ملصقات</option>
+        <option>تغليف مستدام</option>
+        <option>أخرى</option>
+      </select>
+
+      <label>الكمية المطلوبة</label>
+      <input type="number" placeholder="مثال: 5000" required>
+
+      <label>اشرح لنا طلبك</label>
+      <textarea placeholder="المقاس، الخامة، اللون أو أي مواصفات أخرى"></textarea>
+
+      <label>هل تحتاج طباعة شعار؟</label>
+
+      <select>
+        <option>نعم</option>
+        <option>لا</option>
+        <option>مو متأكد</option>
+      </select>
+
+      <label>الميزانية التقريبية</label>
+      <input type="text" placeholder="مثال: 5,000 ريال">
+
+      <label>متى تحتاج الطلب؟</label>
+      <input type="date">
+
+      <label>اسم المنشأة</label>
+      <input type="text" placeholder="اسم المطعم / الكوفي / الشركة">
+
+      <label>اسمك</label>
+      <input type="text" required>
+
+      <label>رقم الجوال / واتساب</label>
+      <input type="tel" placeholder="05xxxxxxxx" required>
+
+      <label>الحي في جدة</label>
+      <input type="text" placeholder="مثال: الروضة">
+
+      <button type="submit">
+        جيب لي عروض
+      </button>
+
+      <div class="note">
+        إرسال الطلب مجاني ولا يلزمك بشراء أي عرض.
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<footer>
+  تسويمة | TASWIMA<br>
+  جدة، المملكة العربية السعودية
+</footer>
+
+</body>
+</html>
