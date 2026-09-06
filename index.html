@@ -185,16 +185,28 @@
       margin-bottom: 10px;
     }
 
-    .whatsapp-card-btn {
+    .whatsapp-card-btn,
+    .download-btn {
       display: block;
       width: 100%;
-      background: #25D366;
-      color: white;
       text-decoration: none;
       padding: 14px;
       border-radius: 10px;
       font-size: 16px;
       font-weight: bold;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .whatsapp-card-btn {
+      background: #25D366;
+      color: white;
+    }
+
+    .download-btn {
+      background: #eaf3ee;
+      color: #12372a;
+      border: 1px solid #cddfd5;
     }
 
     .form-card {
@@ -239,6 +251,16 @@
     textarea {
       min-height: 120px;
       resize: vertical;
+    }
+
+    .helper-text {
+      background: #f3f7f4;
+      border: 1px solid #dce9e1;
+      color: #4b5563;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     .submit-btn {
@@ -526,17 +548,26 @@
       <h2 class="en">I'm a Packaging Supplier</h2>
 
       <p class="ar">
-        سجّل شركتك ومنتجاتك عشان توصلك طلبات مناسبة.
+        سجّل شركتك ومنتجاتك وأرسل لنا قائمة أسعارك وكمياتك.
       </p>
 
       <p class="en">
-        Register your company and packaging products to receive suitable opportunities.
+        Register your company and share your packaging price list and quantities.
       </p>
 
       <button class="main" onclick="showForm('supplierForm')">
         <span class="ar">تسجيل مورد</span>
         <span class="en">Register as Supplier</span>
       </button>
+
+      <a
+        href="TASWIMA_Supplier_Price_List_Template.xlsx"
+        class="download-btn"
+        download
+      >
+        <span class="ar">⬇️ تحميل قالب قائمة الأسعار</span>
+        <span class="en">⬇️ Download Price List Template</span>
+      </a>
 
       <a
         id="supplierWhatsapp"
@@ -736,6 +767,41 @@
         <label class="ar">مدة التوريد المعتادة</label>
         <label class="en">Typical Lead Time</label>
         <input type="text" name="lead_time">
+      </div>
+
+      <div>
+        <label class="ar">قائمة الأسعار والكميات</label>
+        <label class="en">Price List & Quantity Tiers</label>
+
+        <a
+          href="TASWIMA_Supplier_Price_List_Template.xlsx"
+          class="download-btn"
+          download
+        >
+          <span class="ar">⬇️ تحميل قالب تسويمة لقائمة الأسعار</span>
+          <span class="en">⬇️ Download TASWIMA Price List Template</span>
+        </a>
+
+        <div class="helper-text">
+          <span class="ar">
+            حمّل القالب، عبّيه بالمنتجات والأسعار والكميات، وبعدها ارفعه على Google Drive أو OneDrive والصق الرابط في الخانة تحت.
+          </span>
+
+          <span class="en">
+            Download the template, complete your products, prices and quantity tiers, then upload it to Google Drive or OneDrive and paste the share link below.
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <label class="ar">رابط قائمة الأسعار</label>
+        <label class="en">Price List Link</label>
+
+        <input
+          type="url"
+          name="price_list_link"
+          placeholder="https://..."
+        >
       </div>
 
       <div>
@@ -944,4 +1010,4 @@
 </script>
 
 </body>
-</html>
+  </html>
