@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تسويمة | TASWIMA</title>
+
+  <title>TASWIMA | تسويمة</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -18,230 +21,252 @@
     .hero {
       background: #12372a;
       color: white;
-      padding: 55px 22px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     .logo {
       font-size: 38px;
       font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .english {
-      font-size: 14px;
-      letter-spacing: 4px;
-      opacity: .8;
-    }
-
-    .hero h1 {
-      font-size: 27px;
-      margin: 30px 0 10px;
+      margin-bottom: 10px;
     }
 
     .hero p {
+      font-size: 18px;
       line-height: 1.8;
-      opacity: .9;
+      max-width: 650px;
+      margin: 0 auto;
     }
 
     .container {
-      max-width: 650px;
-      margin: auto;
-      padding: 25px 18px 50px;
+      width: 92%;
+      max-width: 900px;
+      margin: 35px auto;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      color: #12372a;
+      margin-top: 0;
     }
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 10px;
-      margin-bottom: 30px;
+      gap: 15px;
     }
 
     .step {
-      background: white;
-      padding: 16px 8px;
-      text-align: center;
+      background: #eef4f0;
+      padding: 18px;
       border-radius: 12px;
-      font-size: 13px;
     }
 
-    .step strong {
-      display: block;
-      font-size: 22px;
-      color: #12372a;
-      margin-bottom: 7px;
-    }
-
-    .form-card {
-      background: white;
-      padding: 25px 20px;
-      border-radius: 18px;
-      box-shadow: 0 4px 20px rgba(0,0,0,.06);
-    }
-
-    h2 {
-      margin-top: 0;
-      color: #12372a;
+    form {
+      display: grid;
+      gap: 15px;
     }
 
     label {
-      display: block;
       font-weight: bold;
-      margin: 18px 0 7px;
     }
 
-    input, select, textarea {
+    input,
+    select,
+    textarea {
       width: 100%;
       padding: 14px;
-      border: 1px solid #ddd;
+      border: 1px solid #ccc;
       border-radius: 10px;
       font-size: 16px;
-      background: white;
+      font-family: Arial, sans-serif;
     }
 
     textarea {
-      min-height: 100px;
       resize: vertical;
     }
 
     button {
-      width: 100%;
-      margin-top: 25px;
-      padding: 16px;
-      border: 0;
-      border-radius: 12px;
       background: #12372a;
       color: white;
-      font-size: 18px;
-      font-weight: bold;
+      border: none;
+      padding: 15px;
+      font-size: 17px;
+      border-radius: 10px;
       cursor: pointer;
     }
 
+    button:hover {
+      background: #0d2a20;
+    }
+
     .note {
-      text-align: center;
-      font-size: 12px;
-      color: #777;
-      margin-top: 14px;
+      background: #fff8e8;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      color: #777;
-      font-size: 13px;
+      padding: 25px;
+      color: #666;
+      font-size: 14px;
     }
   </style>
 </head>
 
 <body>
 
-<section class="hero">
+  <section class="hero">
+    <div class="logo">تسويمة</div>
 
-  <div class="logo">تسويمة</div>
-  <div class="english">TASWIMA</div>
+    <p>
+      نربط العملاء بالموردين في جدة بطريقة بسيطة وسريعة.
+      أرسل طلبك، ونساعدك في الوصول للمورد المناسب.
+    </p>
+  </section>
 
-  <h1>اطلبها… وخلي العروض تجيك</h1>
+  <div class="container">
 
-  <p>
-    بدل ما تتواصل مع عدة موردين،
-    أرسل احتياجك مرة واحدة ونساعدك في الحصول
-    على عروض مناسبة من موردين في جدة.
-  </p>
+    <div class="card">
+      <h2>كيف تشتغل الخدمة؟</h2>
 
-</section>
+      <div class="steps">
 
-<div class="container">
+        <div class="step">
+          1. أرسل تفاصيل طلبك.
+        </div>
 
-  <div class="steps">
+        <div class="step">
+          2. نراجع طلبك ونبحث عن المورد المناسب.
+        </div>
 
-    <div class="step">
-      <strong>1</strong>
-      ارسل طلبك
-    </div>
+        <div class="step">
+          3. يتم التواصل معك بالعروض المناسبة.
+        </div>
 
-    <div class="step">
-      <strong>2</strong>
-      نستقبل العروض
-    </div>
-
-    <div class="step">
-      <strong>3</strong>
-      قارن واختار
-    </div>
-
-  </div>
-
-  <div class="form-card">
-
-    <h2>اطلب تسويمة</h2>
-
-    <form>
-
-      <label>إيش تحتاج؟</label>
-
-      <select required>
-        <option value="">اختر المنتج</option>
-        <option>أكواب ورقية</option>
-        <option>أكواب بلاستيك</option>
-        <option>علب طعام</option>
-        <option>علب برجر</option>
-        <option>علب بيتزا</option>
-        <option>أكياس ورقية</option>
-        <option>ملصقات</option>
-        <option>تغليف مستدام</option>
-        <option>أخرى</option>
-      </select>
-
-      <label>الكمية المطلوبة</label>
-      <input type="number" placeholder="مثال: 5000" required>
-
-      <label>اشرح لنا طلبك</label>
-      <textarea placeholder="المقاس، الخامة، اللون أو أي مواصفات أخرى"></textarea>
-
-      <label>هل تحتاج طباعة شعار؟</label>
-
-      <select>
-        <option>نعم</option>
-        <option>لا</option>
-        <option>مو متأكد</option>
-      </select>
-
-      <label>الميزانية التقريبية</label>
-      <input type="text" placeholder="مثال: 5,000 ريال">
-
-      <label>متى تحتاج الطلب؟</label>
-      <input type="date">
-
-      <label>اسم المنشأة</label>
-      <input type="text" placeholder="اسم المطعم / الكوفي / الشركة">
-
-      <label>اسمك</label>
-      <input type="text" required>
-
-      <label>رقم الجوال / واتساب</label>
-      <input type="tel" placeholder="05xxxxxxxx" required>
-
-      <label>الحي في جدة</label>
-      <input type="text" placeholder="مثال: الروضة">
-
-      <button type="submit">
-        جيب لي عروض
-      </button>
-
-      <div class="note">
-        إرسال الطلب مجاني ولا يلزمك بشراء أي عرض.
       </div>
+    </div>
 
-    </form>
+    <div class="card">
+
+      <h2>أرسل طلبك</h2>
+
+      <form action="https://formspree.io/f/mjyvezde" method="POST">
+
+        <div>
+          <label>الاسم</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="اكتب اسمك"
+            required
+          >
+        </div>
+
+        <div>
+          <label>رقم الجوال</label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="05xxxxxxxx"
+            required
+          >
+        </div>
+
+        <div>
+          <label>البريد الإلكتروني</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="example@email.com"
+          >
+        </div>
+
+        <div>
+          <label>اسم الشركة أو المتجر</label>
+          <input
+            type="text"
+            name="company"
+            placeholder="اختياري"
+          >
+        </div>
+
+        <div>
+          <label>نوع الطلب</label>
+
+          <select name="request_type" required>
+
+            <option value="">اختر</option>
+
+            <option value="buyer">
+              أبحث عن مورد
+            </option>
+
+            <option value="supplier">
+              أبغى أسجل كمورد
+            </option>
+
+          </select>
+        </div>
+
+        <div>
+          <label>نوع المنتج أو الخدمة</label>
+
+          <input
+            type="text"
+            name="product"
+            placeholder="مثال: خضار، مواد غذائية، تغليف، معدات..."
+            required
+          >
+        </div>
+
+        <div>
+          <label>تفاصيل الطلب</label>
+
+          <textarea
+            name="message"
+            rows="6"
+            placeholder="اكتب الكمية والتفاصيل وأي معلومات مهمة"
+            required
+          ></textarea>
+        </div>
+
+        <div>
+          <label>المدينة</label>
+
+          <input
+            type="text"
+            name="city"
+            value="جدة"
+          >
+        </div>
+
+        <button type="submit">
+          إرسال الطلب
+        </button>
+
+      </form>
+
+    </div>
+
+    <div class="note">
+      في البداية الخدمة مركزة على سوق جدة، وبعدها نقدر نتوسع لمدن ثانية.
+    </div>
 
   </div>
 
-</div>
-
-<footer>
-  تسويمة | TASWIMA<br>
-  جدة، المملكة العربية السعودية
-</footer>
+  <footer>
+    © 2026 تسويمة - TASWIMA
+  </footer>
 
 </body>
 </html>
