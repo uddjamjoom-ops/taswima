@@ -376,13 +376,11 @@
 <body>
 
 <header>
-
   <div class="brand">
     تسويمة | TASWIMA
   </div>
 
   <div class="header-actions">
-
     <a
       id="topWhatsapp"
       class="whatsapp-top"
@@ -395,9 +393,7 @@
     <button class="lang-btn" onclick="toggleLanguage()">
       AR / EN
     </button>
-
   </div>
-
 </header>
 
 <section class="hero">
@@ -587,17 +583,17 @@
         <label class="ar">نوع التغليف المطلوب</label>
         <label class="en">Packaging Type</label>
 
-        <select name="packaging_type" required>
-          <option value="">--</option>
-          <option>Cartons & Boxes</option>
-          <option>Food Containers</option>
-          <option>Paper Bags</option>
-          <option>Plastic Bags</option>
-          <option>Cups & Containers</option>
-          <option>Fruit & Vegetable Packaging</option>
-          <option>Eco-Friendly Packaging</option>
-          <option>Custom Printed Packaging</option>
-          <option>Other</option>
+        <select name="packaging_type" class="bilingual-select" required>
+          <option value="" data-ar="اختر" data-en="Select">اختر</option>
+          <option value="Cartons & Boxes" data-ar="كراتين وصناديق" data-en="Cartons & Boxes">كراتين وصناديق</option>
+          <option value="Food Containers" data-ar="علب طعام" data-en="Food Containers">علب طعام</option>
+          <option value="Paper Bags" data-ar="أكياس ورقية" data-en="Paper Bags">أكياس ورقية</option>
+          <option value="Plastic Bags" data-ar="أكياس بلاستيكية" data-en="Plastic Bags">أكياس بلاستيكية</option>
+          <option value="Cups & Containers" data-ar="أكواب وعبوات" data-en="Cups & Containers">أكواب وعبوات</option>
+          <option value="Fruit & Vegetable Packaging" data-ar="تغليف خضار وفواكه" data-en="Fruit & Vegetable Packaging">تغليف خضار وفواكه</option>
+          <option value="Eco-Friendly Packaging" data-ar="تغليف صديق للبيئة" data-en="Eco-Friendly Packaging">تغليف صديق للبيئة</option>
+          <option value="Custom Printed Packaging" data-ar="تغليف بطباعة مخصصة" data-en="Custom Printed Packaging">تغليف بطباعة مخصصة</option>
+          <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
         </select>
       </div>
 
@@ -611,10 +607,10 @@
         <label class="ar">هل تحتاج طباعة شعار؟</label>
         <label class="en">Do you need logo printing?</label>
 
-        <select name="printing">
-          <option value="">--</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select name="printing" class="bilingual-select">
+          <option value="" data-ar="اختر" data-en="Select">اختر</option>
+          <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
+          <option value="No" data-ar="لا" data-en="No">لا</option>
         </select>
       </div>
 
@@ -622,14 +618,14 @@
         <label class="ar">نوع الخامة المطلوبة</label>
         <label class="en">Preferred Material</label>
 
-        <select name="material">
-          <option value="">--</option>
-          <option>Paper</option>
-          <option>Cardboard</option>
-          <option>Plastic</option>
-          <option>Biodegradable</option>
-          <option>Compostable</option>
-          <option>Not Sure</option>
+        <select name="material" class="bilingual-select">
+          <option value="" data-ar="اختر" data-en="Select">اختر</option>
+          <option value="Paper" data-ar="ورق" data-en="Paper">ورق</option>
+          <option value="Cardboard" data-ar="كرتون" data-en="Cardboard">كرتون</option>
+          <option value="Plastic" data-ar="بلاستيك" data-en="Plastic">بلاستيك</option>
+          <option value="Biodegradable" data-ar="قابل للتحلل الحيوي" data-en="Biodegradable">قابل للتحلل الحيوي</option>
+          <option value="Compostable" data-ar="قابل للتسميد" data-en="Compostable">قابل للتسميد</option>
+          <option value="Not Sure" data-ar="غير متأكد" data-en="Not Sure">غير متأكد</option>
         </select>
       </div>
 
@@ -712,10 +708,10 @@
         <label class="ar">هل توفر طباعة مخصصة؟</label>
         <label class="en">Custom Printing Available?</label>
 
-        <select name="custom_printing">
-          <option value="">--</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select name="custom_printing" class="bilingual-select">
+          <option value="" data-ar="اختر" data-en="Select">اختر</option>
+          <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
+          <option value="No" data-ar="لا" data-en="No">لا</option>
         </select>
       </div>
 
@@ -723,10 +719,10 @@
         <label class="ar">هل عندكم منتجات صديقة للبيئة؟</label>
         <label class="en">Do you offer eco-friendly packaging?</label>
 
-        <select name="eco_friendly">
-          <option value="">--</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select name="eco_friendly" class="bilingual-select">
+          <option value="" data-ar="اختر" data-en="Select">اختر</option>
+          <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
+          <option value="No" data-ar="لا" data-en="No">لا</option>
         </select>
       </div>
 
@@ -872,6 +868,33 @@
     document.getElementById("floatingWhatsapp").href = link;
   }
 
+  function updateSelectLanguage() {
+
+    const isEnglish =
+      document.body.classList.contains("english");
+
+    const selects =
+      document.querySelectorAll(".bilingual-select");
+
+    selects.forEach(select => {
+
+      const currentValue = select.value;
+
+      Array.from(select.options).forEach(option => {
+
+        option.textContent =
+          isEnglish
+            ? option.dataset.en
+            : option.dataset.ar;
+
+      });
+
+      select.value = currentValue;
+
+    });
+
+  }
+
   function toggleLanguage() {
 
     document.body.classList.toggle("english");
@@ -889,6 +912,7 @@
     }
 
     updateWhatsappLinks();
+    updateSelectLanguage();
   }
 
   function showForm(formId) {
@@ -915,6 +939,7 @@
   }
 
   updateWhatsappLinks();
+  updateSelectLanguage();
 
 </script>
 
