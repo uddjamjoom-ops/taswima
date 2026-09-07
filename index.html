@@ -261,6 +261,7 @@
       border-radius: 10px;
       font-size: 14px;
       line-height: 1.7;
+      margin-bottom: 14px;
     }
 
     .submit-btn {
@@ -282,6 +283,55 @@
       border-radius: 10px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    .product-list {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .product-item {
+      background: #f7faf8;
+      border: 1px solid #dce9e1;
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .product-item-title {
+      color: #12372a;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .add-product-btn {
+      width: 100%;
+      background: #eaf3ee;
+      color: #12372a;
+      border: 2px dashed #9db9aa;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .remove-product-btn {
+      background: #fff0f0;
+      color: #b42318;
+      border: 1px solid #f2b8b5;
+      padding: 9px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 12px;
     }
 
     .how {
@@ -371,12 +421,14 @@
     }
 
     @media(max-width: 750px) {
+
       .categories {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .actions,
-      .steps {
+      .steps,
+      .product-grid {
         grid-template-columns: 1fr;
       }
 
@@ -398,11 +450,13 @@
 <body>
 
 <header>
+
   <div class="brand">
     تسويمة | TASWIMA
   </div>
 
   <div class="header-actions">
+
     <a
       id="topWhatsapp"
       class="whatsapp-top"
@@ -415,7 +469,9 @@
     <button class="lang-btn" onclick="toggleLanguage()">
       AR / EN
     </button>
+
   </div>
+
 </header>
 
 <section class="hero">
@@ -526,8 +582,15 @@
       </p>
 
       <button class="main" onclick="showForm('buyerForm')">
-        <span class="ar">أرسل طلب تسعيرة</span>
-        <span class="en">Request a Quote</span>
+
+        <span class="ar">
+          أرسل طلب تسعيرة
+        </span>
+
+        <span class="en">
+          Request a Quote
+        </span>
+
       </button>
 
       <a
@@ -556,8 +619,15 @@
       </p>
 
       <button class="main" onclick="showForm('supplierForm')">
-        <span class="ar">تسجيل مورد</span>
-        <span class="en">Register as Supplier</span>
+
+        <span class="ar">
+          تسجيل مورد
+        </span>
+
+        <span class="en">
+          Register as Supplier
+        </span>
+
       </button>
 
       <a
@@ -565,8 +635,13 @@
         class="download-btn"
         download
       >
-        <span class="ar">⬇️ تحميل قالب قائمة الأسعار</span>
-        <span class="en">⬇️ Download Price List Template</span>
+        <span class="ar">
+          ⬇️ تحميل قالب قائمة الأسعار
+        </span>
+
+        <span class="en">
+          ⬇️ Download Price List Template
+        </span>
       </a>
 
       <a
@@ -575,112 +650,222 @@
         href="#"
         target="_blank"
       >
-        <span class="ar">تواصل معنا كمورد</span>
-        <span class="en">Contact Us as Supplier</span>
+
+        <span class="ar">
+          تواصل معنا كمورد
+        </span>
+
+        <span class="en">
+          Contact Us as Supplier
+        </span>
+
       </a>
 
     </div>
 
   </div>
 
+  <!-- BUYER FORM -->
+
   <div id="buyerForm" class="form-card">
 
-    <h2 class="ar">طلب تسعيرة تغليف</h2>
-    <h2 class="en">Packaging Quote Request</h2>
+    <h2 class="ar">
+      طلب تسعيرة تغليف
+    </h2>
 
-    <form action="https://formspree.io/f/mjyvezde" method="POST">
+    <h2 class="en">
+      Packaging Quote Request
+    </h2>
 
-      <input type="hidden" name="form_type" value="Packaging Quote Request">
+    <form
+      action="https://formspree.io/f/mjyvezde"
+      method="POST"
+    >
+
+      <input
+        type="hidden"
+        name="form_type"
+        value="Buyer Packaging Quote Request"
+      >
 
       <div>
-        <label class="ar">الاسم</label>
-        <label class="en">Name</label>
-        <input type="text" name="name" required>
+
+        <label class="ar">
+          الاسم
+        </label>
+
+        <label class="en">
+          Name
+        </label>
+
+        <input
+          type="text"
+          name="name"
+          required
+        >
+
       </div>
 
       <div>
-        <label class="ar">رقم الجوال / واتساب</label>
-        <label class="en">Mobile / WhatsApp</label>
-        <input type="tel" name="phone" required>
+
+        <label class="ar">
+          رقم الجوال / واتساب
+        </label>
+
+        <label class="en">
+          Mobile / WhatsApp
+        </label>
+
+        <input
+          type="tel"
+          name="phone"
+          required
+        >
+
       </div>
 
       <div>
-        <label class="ar">اسم الشركة أو النشاط</label>
-        <label class="en">Company / Business Name</label>
-        <input type="text" name="company">
+
+        <label class="ar">
+          البريد الإلكتروني
+        </label>
+
+        <label class="en">
+          Email
+        </label>
+
+        <input
+          type="email"
+          name="email"
+        >
+
       </div>
 
       <div>
-        <label class="ar">نوع التغليف المطلوب</label>
-        <label class="en">Packaging Type</label>
 
-        <select name="packaging_type" class="bilingual-select" required>
-          <option value="" data-ar="اختر" data-en="Select">اختر</option>
-          <option value="Cartons & Boxes" data-ar="كراتين وصناديق" data-en="Cartons & Boxes">كراتين وصناديق</option>
-          <option value="Food Containers" data-ar="علب طعام" data-en="Food Containers">علب طعام</option>
-          <option value="Paper Bags" data-ar="أكياس ورقية" data-en="Paper Bags">أكياس ورقية</option>
-          <option value="Plastic Bags" data-ar="أكياس بلاستيكية" data-en="Plastic Bags">أكياس بلاستيكية</option>
-          <option value="Cups & Containers" data-ar="أكواب وعبوات" data-en="Cups & Containers">أكواب وعبوات</option>
-          <option value="Fruit & Vegetable Packaging" data-ar="تغليف خضار وفواكه" data-en="Fruit & Vegetable Packaging">تغليف خضار وفواكه</option>
-          <option value="Eco-Friendly Packaging" data-ar="تغليف صديق للبيئة" data-en="Eco-Friendly Packaging">تغليف صديق للبيئة</option>
-          <option value="Custom Printed Packaging" data-ar="تغليف بطباعة مخصصة" data-en="Custom Printed Packaging">تغليف بطباعة مخصصة</option>
-          <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
-        </select>
+        <label class="ar">
+          اسم الشركة أو النشاط
+        </label>
+
+        <label class="en">
+          Company / Business Name
+        </label>
+
+        <input
+          type="text"
+          name="company"
+        >
+
       </div>
 
       <div>
-        <label class="ar">الكمية المطلوبة</label>
-        <label class="en">Required Quantity</label>
-        <input type="text" name="quantity" required>
+
+        <label class="ar">
+          المنتجات المطلوبة
+        </label>
+
+        <label class="en">
+          Required Products
+        </label>
+
+        <div class="helper-text">
+
+          <span class="ar">
+            أضف كل المنتجات اللي تحتاجها في نفس الطلب. تقدر تحدد كمية وخامة ومواصفات مختلفة لكل منتج.
+          </span>
+
+          <span class="en">
+            Add all the products you need in one request. Each product can have its own quantity, material and specifications.
+          </span>
+
+        </div>
+
+        <div
+          id="productList"
+          class="product-list"
+        ></div>
+
+        <button
+          type="button"
+          class="add-product-btn"
+          onclick="addProduct()"
+        >
+
+          <span class="ar">
+            ＋ إضافة منتج آخر
+          </span>
+
+          <span class="en">
+            ＋ Add Another Product
+          </span>
+
+        </button>
+
       </div>
 
       <div>
-        <label class="ar">هل تحتاج طباعة شعار؟</label>
-        <label class="en">Do you need logo printing?</label>
 
-        <select name="printing" class="bilingual-select">
-          <option value="" data-ar="اختر" data-en="Select">اختر</option>
-          <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
-          <option value="No" data-ar="لا" data-en="No">لا</option>
-        </select>
+        <label class="ar">
+          موعد التوريد المطلوب
+        </label>
+
+        <label class="en">
+          Required Delivery Date
+        </label>
+
+        <input
+          type="date"
+          name="delivery_date"
+        >
+
       </div>
 
       <div>
-        <label class="ar">نوع الخامة المطلوبة</label>
-        <label class="en">Preferred Material</label>
 
-        <select name="material" class="bilingual-select">
-          <option value="" data-ar="اختر" data-en="Select">اختر</option>
-          <option value="Paper" data-ar="ورق" data-en="Paper">ورق</option>
-          <option value="Cardboard" data-ar="كرتون" data-en="Cardboard">كرتون</option>
-          <option value="Plastic" data-ar="بلاستيك" data-en="Plastic">بلاستيك</option>
-          <option value="Biodegradable" data-ar="قابل للتحلل الحيوي" data-en="Biodegradable">قابل للتحلل الحيوي</option>
-          <option value="Compostable" data-ar="قابل للتسميد" data-en="Compostable">قابل للتسميد</option>
-          <option value="Not Sure" data-ar="غير متأكد" data-en="Not Sure">غير متأكد</option>
-        </select>
+        <label class="ar">
+          منطقة التوصيل في جدة
+        </label>
+
+        <label class="en">
+          Delivery Area in Jeddah
+        </label>
+
+        <input
+          type="text"
+          name="delivery_area"
+        >
+
       </div>
 
       <div>
-        <label class="ar">موعد التوريد المطلوب</label>
-        <label class="en">Required Delivery Date</label>
-        <input type="date" name="delivery_date">
+
+        <label class="ar">
+          ملاحظات عامة على الطلب
+        </label>
+
+        <label class="en">
+          General Request Notes
+        </label>
+
+        <textarea
+          name="message"
+        ></textarea>
+
       </div>
 
-      <div>
-        <label class="ar">منطقة التوصيل في جدة</label>
-        <label class="en">Delivery Area in Jeddah</label>
-        <input type="text" name="delivery_area">
-      </div>
+      <button
+        class="submit-btn"
+        type="submit"
+      >
 
-      <div>
-        <label class="ar">المواصفات والتفاصيل</label>
-        <label class="en">Specifications & Details</label>
-        <textarea name="message" required></textarea>
-      </div>
+        <span class="ar">
+          إرسال طلب التسعيرة
+        </span>
 
-      <button class="submit-btn" type="submit">
-        <span class="ar">إرسال طلب التسعيرة</span>
-        <span class="en">Submit Quote Request</span>
+        <span class="en">
+          Submit Quote Request
+        </span>
+
       </button>
 
       <button
@@ -688,101 +873,280 @@
         type="button"
         onclick="hideForms()"
       >
-        <span class="ar">رجوع</span>
-        <span class="en">Back</span>
+
+        <span class="ar">
+          رجوع
+        </span>
+
+        <span class="en">
+          Back
+        </span>
+
       </button>
 
     </form>
 
   </div>
 
+  <!-- SUPPLIER FORM -->
+
   <div id="supplierForm" class="form-card">
 
-    <h2 class="ar">تسجيل مورد تغليف</h2>
-    <h2 class="en">Packaging Supplier Registration</h2>
+    <h2 class="ar">
+      تسجيل مورد تغليف
+    </h2>
 
-    <form action="https://formspree.io/f/mjyvezde" method="POST">
+    <h2 class="en">
+      Packaging Supplier Registration
+    </h2>
 
-      <input type="hidden" name="form_type" value="Packaging Supplier Registration">
+    <form
+      action="https://formspree.io/f/mjyvezde"
+      method="POST"
+    >
+
+      <input
+        type="hidden"
+        name="form_type"
+        value="Packaging Supplier Registration"
+      >
 
       <div>
-        <label class="ar">اسم المسؤول</label>
-        <label class="en">Contact Person</label>
-        <input type="text" name="contact_name" required>
+
+        <label class="ar">
+          اسم المسؤول
+        </label>
+
+        <label class="en">
+          Contact Person
+        </label>
+
+        <input
+          type="text"
+          name="contact_name"
+          required
+        >
+
       </div>
 
       <div>
-        <label class="ar">اسم الشركة</label>
-        <label class="en">Company Name</label>
-        <input type="text" name="supplier_company" required>
+
+        <label class="ar">
+          اسم الشركة
+        </label>
+
+        <label class="en">
+          Company Name
+        </label>
+
+        <input
+          type="text"
+          name="supplier_company"
+          required
+        >
+
       </div>
 
       <div>
-        <label class="ar">رقم الجوال / واتساب</label>
-        <label class="en">Mobile / WhatsApp</label>
-        <input type="tel" name="supplier_phone" required>
+
+        <label class="ar">
+          رقم الجوال / واتساب
+        </label>
+
+        <label class="en">
+          Mobile / WhatsApp
+        </label>
+
+        <input
+          type="tel"
+          name="supplier_phone"
+          required
+        >
+
       </div>
 
       <div>
-        <label class="ar">البريد الإلكتروني</label>
-        <label class="en">Email</label>
-        <input type="email" name="supplier_email">
+
+        <label class="ar">
+          البريد الإلكتروني
+        </label>
+
+        <label class="en">
+          Email
+        </label>
+
+        <input
+          type="email"
+          name="supplier_email"
+        >
+
       </div>
 
       <div>
-        <label class="ar">منتجات التغليف اللي توفرها</label>
-        <label class="en">Packaging Products You Supply</label>
-        <textarea name="supplier_products" required></textarea>
+
+        <label class="ar">
+          منتجات التغليف اللي توفرها
+        </label>
+
+        <label class="en">
+          Packaging Products You Supply
+        </label>
+
+        <textarea
+          name="supplier_products"
+          required
+        ></textarea>
+
       </div>
 
       <div>
-        <label class="ar">هل توفر طباعة مخصصة؟</label>
-        <label class="en">Custom Printing Available?</label>
 
-        <select name="custom_printing" class="bilingual-select">
-          <option value="" data-ar="اختر" data-en="Select">اختر</option>
-          <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
-          <option value="No" data-ar="لا" data-en="No">لا</option>
+        <label class="ar">
+          هل توفر طباعة مخصصة؟
+        </label>
+
+        <label class="en">
+          Custom Printing Available?
+        </label>
+
+        <select
+          name="custom_printing"
+          class="bilingual-select"
+        >
+
+          <option
+            value=""
+            data-ar="اختر"
+            data-en="Select"
+          >
+            اختر
+          </option>
+
+          <option
+            value="Yes"
+            data-ar="نعم"
+            data-en="Yes"
+          >
+            نعم
+          </option>
+
+          <option
+            value="No"
+            data-ar="لا"
+            data-en="No"
+          >
+            لا
+          </option>
+
         </select>
+
       </div>
 
       <div>
-        <label class="ar">هل عندكم منتجات صديقة للبيئة؟</label>
-        <label class="en">Do you offer eco-friendly packaging?</label>
 
-        <select name="eco_friendly" class="bilingual-select">
-          <option value="" data-ar="اختر" data-en="Select">اختر</option>
-          <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
-          <option value="No" data-ar="لا" data-en="No">لا</option>
+        <label class="ar">
+          هل عندكم منتجات صديقة للبيئة؟
+        </label>
+
+        <label class="en">
+          Do you offer eco-friendly packaging?
+        </label>
+
+        <select
+          name="eco_friendly"
+          class="bilingual-select"
+        >
+
+          <option
+            value=""
+            data-ar="اختر"
+            data-en="Select"
+          >
+            اختر
+          </option>
+
+          <option
+            value="Yes"
+            data-ar="نعم"
+            data-en="Yes"
+          >
+            نعم
+          </option>
+
+          <option
+            value="No"
+            data-ar="لا"
+            data-en="No"
+          >
+            لا
+          </option>
+
         </select>
+
       </div>
 
       <div>
-        <label class="ar">الحد الأدنى للطلب</label>
-        <label class="en">Minimum Order Quantity</label>
-        <input type="text" name="minimum_order">
+
+        <label class="ar">
+          الحد الأدنى للطلب
+        </label>
+
+        <label class="en">
+          Minimum Order Quantity
+        </label>
+
+        <input
+          type="text"
+          name="minimum_order"
+        >
+
       </div>
 
       <div>
-        <label class="ar">مدة التوريد المعتادة</label>
-        <label class="en">Typical Lead Time</label>
-        <input type="text" name="lead_time">
+
+        <label class="ar">
+          مدة التوريد المعتادة
+        </label>
+
+        <label class="en">
+          Typical Lead Time
+        </label>
+
+        <input
+          type="text"
+          name="lead_time"
+        >
+
       </div>
 
       <div>
-        <label class="ar">قائمة الأسعار والكميات</label>
-        <label class="en">Price List & Quantity Tiers</label>
+
+        <label class="ar">
+          قائمة الأسعار والكميات
+        </label>
+
+        <label class="en">
+          Price List & Quantity Tiers
+        </label>
 
         <a
           href="TASWIMA_Supplier_Price_List_Template.xlsx"
           class="download-btn"
           download
         >
-          <span class="ar">⬇️ تحميل قالب تسويمة لقائمة الأسعار</span>
-          <span class="en">⬇️ Download TASWIMA Price List Template</span>
+
+          <span class="ar">
+            ⬇️ تحميل قالب تسويمة لقائمة الأسعار
+          </span>
+
+          <span class="en">
+            ⬇️ Download TASWIMA Price List Template
+          </span>
+
         </a>
 
         <div class="helper-text">
+
           <span class="ar">
             حمّل القالب، عبّيه بالمنتجات والأسعار والكميات، وبعدها ارفعه على Google Drive أو OneDrive والصق الرابط في الخانة تحت.
           </span>
@@ -790,29 +1154,58 @@
           <span class="en">
             Download the template, complete your products, prices and quantity tiers, then upload it to Google Drive or OneDrive and paste the share link below.
           </span>
+
         </div>
+
       </div>
 
       <div>
-        <label class="ar">رابط قائمة الأسعار</label>
-        <label class="en">Price List Link</label>
+
+        <label class="ar">
+          رابط قائمة الأسعار
+        </label>
+
+        <label class="en">
+          Price List Link
+        </label>
 
         <input
           type="url"
           name="price_list_link"
           placeholder="https://..."
         >
+
       </div>
 
       <div>
-        <label class="ar">معلومات إضافية</label>
-        <label class="en">Additional Information</label>
-        <textarea name="supplier_message"></textarea>
+
+        <label class="ar">
+          معلومات إضافية
+        </label>
+
+        <label class="en">
+          Additional Information
+        </label>
+
+        <textarea
+          name="supplier_message"
+        ></textarea>
+
       </div>
 
-      <button class="submit-btn" type="submit">
-        <span class="ar">تسجيل المورد</span>
-        <span class="en">Register Supplier</span>
+      <button
+        class="submit-btn"
+        type="submit"
+      >
+
+        <span class="ar">
+          تسجيل المورد
+        </span>
+
+        <span class="en">
+          Register Supplier
+        </span>
+
       </button>
 
       <button
@@ -820,8 +1213,15 @@
         type="button"
         onclick="hideForms()"
       >
-        <span class="ar">رجوع</span>
-        <span class="en">Back</span>
+
+        <span class="ar">
+          رجوع
+        </span>
+
+        <span class="en">
+          Back
+        </span>
+
       </button>
 
     </form>
@@ -830,25 +1230,37 @@
 
   <div class="how">
 
-    <h2 class="ar">كيف تشتغل تسويمة؟</h2>
-    <h2 class="en">How Taswima Works</h2>
+    <h2 class="ar">
+      كيف تشتغل تسويمة؟
+    </h2>
+
+    <h2 class="en">
+      How Taswima Works
+    </h2>
 
     <div class="steps">
 
       <div class="step">
-        <div class="step-number">1</div>
+
+        <div class="step-number">
+          1
+        </div>
 
         <span class="ar">
-          العميل يحدد منتج التغليف والكمية.
+          العميل يحدد كل منتجات التغليف والكميات في طلب واحد.
         </span>
 
         <span class="en">
-          Buyer submits packaging requirements.
+          Buyer submits all required packaging products in one request.
         </span>
+
       </div>
 
       <div class="step">
-        <div class="step-number">2</div>
+
+        <div class="step-number">
+          2
+        </div>
 
         <span class="ar">
           نوصل الطلب لموردين مناسبين في جدة.
@@ -857,10 +1269,14 @@
         <span class="en">
           We connect the request with suitable Jeddah suppliers.
         </span>
+
       </div>
 
       <div class="step">
-        <div class="step-number">3</div>
+
+        <div class="step-number">
+          3
+        </div>
 
         <span class="ar">
           العميل يستقبل عروض الأسعار ويختار الأنسب.
@@ -869,6 +1285,7 @@
         <span class="en">
           Buyer receives quotations and chooses the best option.
         </span>
+
       </div>
 
     </div>
@@ -948,10 +1365,14 @@
 
       Array.from(select.options).forEach(option => {
 
-        option.textContent =
-          isEnglish
-            ? option.dataset.en
-            : option.dataset.ar;
+        if (option.dataset.ar && option.dataset.en) {
+
+          option.textContent =
+            isEnglish
+              ? option.dataset.en
+              : option.dataset.ar;
+
+        }
 
       });
 
@@ -965,7 +1386,9 @@
 
     document.body.classList.toggle("english");
 
-    if (document.body.classList.contains("english")) {
+    if (
+      document.body.classList.contains("english")
+    ) {
 
       document.documentElement.lang = "en";
       document.documentElement.dir = "ltr";
@@ -983,20 +1406,34 @@
 
   function showForm(formId) {
 
-    document.getElementById("buyerForm").classList.remove("active");
-    document.getElementById("supplierForm").classList.remove("active");
+    document
+      .getElementById("buyerForm")
+      .classList.remove("active");
 
-    document.getElementById(formId).classList.add("active");
+    document
+      .getElementById("supplierForm")
+      .classList.remove("active");
 
-    document.getElementById(formId).scrollIntoView({
-      behavior: "smooth"
-    });
+    document
+      .getElementById(formId)
+      .classList.add("active");
+
+    document
+      .getElementById(formId)
+      .scrollIntoView({
+        behavior: "smooth"
+      });
   }
 
   function hideForms() {
 
-    document.getElementById("buyerForm").classList.remove("active");
-    document.getElementById("supplierForm").classList.remove("active");
+    document
+      .getElementById("buyerForm")
+      .classList.remove("active");
+
+    document
+      .getElementById("supplierForm")
+      .classList.remove("active");
 
     window.scrollTo({
       top: 0,
@@ -1004,10 +1441,466 @@
     });
   }
 
+  let productCounter = 0;
+
+  function addProduct() {
+
+    productCounter++;
+
+    const productList =
+      document.getElementById("productList");
+
+    const product =
+      document.createElement("div");
+
+    product.className =
+      "product-item";
+
+    product.innerHTML = `
+
+      <div class="product-item-title">
+
+        <span class="ar">
+          المنتج ${productCounter}
+        </span>
+
+        <span class="en">
+          Product ${productCounter}
+        </span>
+
+      </div>
+
+      <div class="product-grid">
+
+        <div>
+
+          <label>
+
+            <span class="ar">
+              نوع التغليف
+            </span>
+
+            <span class="en">
+              Packaging Type
+            </span>
+
+          </label>
+
+          <select
+            name="product_${productCounter}_type"
+            class="bilingual-select"
+            required
+          >
+
+            <option
+              value=""
+              data-ar="اختر"
+              data-en="Select"
+            >
+              اختر
+            </option>
+
+            <option
+              value="Cartons & Boxes"
+              data-ar="كراتين وصناديق"
+              data-en="Cartons & Boxes"
+            >
+              كراتين وصناديق
+            </option>
+
+            <option
+              value="Food Containers"
+              data-ar="علب طعام"
+              data-en="Food Containers"
+            >
+              علب طعام
+            </option>
+
+            <option
+              value="Paper Bags"
+              data-ar="أكياس ورقية"
+              data-en="Paper Bags"
+            >
+              أكياس ورقية
+            </option>
+
+            <option
+              value="Plastic Bags"
+              data-ar="أكياس بلاستيكية"
+              data-en="Plastic Bags"
+            >
+              أكياس بلاستيكية
+            </option>
+
+            <option
+              value="Cups & Containers"
+              data-ar="أكواب وعبوات"
+              data-en="Cups & Containers"
+            >
+              أكواب وعبوات
+            </option>
+
+            <option
+              value="Fruit & Vegetable Packaging"
+              data-ar="تغليف خضار وفواكه"
+              data-en="Fruit & Vegetable Packaging"
+            >
+              تغليف خضار وفواكه
+            </option>
+
+            <option
+              value="Eco-Friendly Packaging"
+              data-ar="تغليف صديق للبيئة"
+              data-en="Eco-Friendly Packaging"
+            >
+              تغليف صديق للبيئة
+            </option>
+
+            <option
+              value="Custom Printed Packaging"
+              data-ar="تغليف بطباعة مخصصة"
+              data-en="Custom Printed Packaging"
+            >
+              تغليف بطباعة مخصصة
+            </option>
+
+            <option
+              value="Other"
+              data-ar="أخرى"
+              data-en="Other"
+            >
+              أخرى
+            </option>
+
+          </select>
+
+        </div>
+
+        <div>
+
+          <label>
+
+            <span class="ar">
+              اسم أو وصف المنتج
+            </span>
+
+            <span class="en">
+              Product Description
+            </span>
+
+          </label>
+
+          <input
+            type="text"
+            name="product_${productCounter}_description"
+            required
+          >
+
+        </div>
+
+        <div>
+
+          <label>
+
+            <span class="ar">
+              الكمية
+            </span>
+
+            <span class="en">
+              Quantity
+            </span>
+
+          </label>
+
+          <input
+            type="number"
+            name="product_${productCounter}_quantity"
+            min="1"
+            required
+          >
+
+        </div>
+
+        <div>
+
+          <label>
+
+            <span class="ar">
+              الوحدة
+            </span>
+
+            <span class="en">
+              Unit
+            </span>
+
+          </label>
+
+          <select
+            name="product_${productCounter}_unit"
+            class="bilingual-select"
+            required
+          >
+
+            <option
+              value=""
+              data-ar="اختر"
+              data-en="Select"
+            >
+              اختر
+            </option>
+
+            <option
+              value="Pieces"
+              data-ar="قطعة"
+              data-en="Pieces"
+            >
+              قطعة
+            </option>
+
+            <option
+              value="Cartons"
+              data-ar="كرتون"
+              data-en="Cartons"
+            >
+              كرتون
+            </option>
+
+            <option
+              value="Packs"
+              data-ar="باكيت"
+              data-en="Packs"
+            >
+              باكيت
+            </option>
+
+            <option
+              value="Rolls"
+              data-ar="رول"
+              data-en="Rolls"
+            >
+              رول
+            </option>
+
+            <option
+              value="Kilograms"
+              data-ar="كيلو"
+              data-en="Kilograms"
+            >
+              كيلو
+            </option>
+
+            <option
+              value="Other"
+              data-ar="أخرى"
+              data-en="Other"
+            >
+              أخرى
+            </option>
+
+          </select>
+
+        </div>
+
+        <div>
+
+          <label>
+
+            <span class="ar">
+              الخامة
+            </span>
+
+            <span class="en">
+              Material
+            </span>
+
+          </label>
+
+          <select
+            name="product_${productCounter}_material"
+            class="bilingual-select"
+          >
+
+            <option
+              value=""
+              data-ar="غير محدد"
+              data-en="Not Specified"
+            >
+              غير محدد
+            </option>
+
+            <option
+              value="Paper"
+              data-ar="ورق"
+              data-en="Paper"
+            >
+              ورق
+            </option>
+
+            <option
+              value="Cardboard"
+              data-ar="كرتون"
+              data-en="Cardboard"
+            >
+              كرتون
+            </option>
+
+            <option
+              value="Plastic"
+              data-ar="بلاستيك"
+              data-en="Plastic"
+            >
+              بلاستيك
+            </option>
+
+            <option
+              value="Biodegradable"
+              data-ar="قابل للتحلل الحيوي"
+              data-en="Biodegradable"
+            >
+              قابل للتحلل الحيوي
+            </option>
+
+            <option
+              value="Compostable"
+              data-ar="قابل للتسميد"
+              data-en="Compostable"
+            >
+              قابل للتسميد
+            </option>
+
+            <option
+              value="Not Sure"
+              data-ar="غير متأكد"
+              data-en="Not Sure"
+            >
+              غير متأكد
+            </option>
+
+          </select>
+
+        </div>
+
+        <div>
+
+          <label>
+
+            <span class="ar">
+              هل تحتاج طباعة شعار؟
+            </span>
+
+            <span class="en">
+              Logo Printing?
+            </span>
+
+          </label>
+
+          <select
+            name="product_${productCounter}_printing"
+            class="bilingual-select"
+          >
+
+            <option
+              value=""
+              data-ar="اختر"
+              data-en="Select"
+            >
+              اختر
+            </option>
+
+            <option
+              value="Yes"
+              data-ar="نعم"
+              data-en="Yes"
+            >
+              نعم
+            </option>
+
+            <option
+              value="No"
+              data-ar="لا"
+              data-en="No"
+            >
+              لا
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <label>
+
+          <span class="ar">
+            المقاس والمواصفات
+          </span>
+
+          <span class="en">
+            Size & Specifications
+          </span>
+
+        </label>
+
+        <textarea
+          name="product_${productCounter}_specifications"
+        ></textarea>
+
+      </div>
+
+      <button
+        type="button"
+        class="remove-product-btn"
+        onclick="removeProduct(this)"
+      >
+
+        <span class="ar">
+          حذف هذا المنتج
+        </span>
+
+        <span class="en">
+          Remove Product
+        </span>
+
+      </button>
+
+    `;
+
+    productList.appendChild(product);
+
+    updateSelectLanguage();
+  }
+
+  function removeProduct(button) {
+
+    const products =
+      document.querySelectorAll(
+        "#productList .product-item"
+      );
+
+    if (products.length <= 1) {
+
+      alert(
+        document.body.classList.contains("english")
+          ? "At least one product is required."
+          : "لازم يكون في منتج واحد على الأقل."
+      );
+
+      return;
+    }
+
+    button
+      .closest(".product-item")
+      .remove();
+  }
+
+  addProduct();
+
   updateWhatsappLinks();
   updateSelectLanguage();
 
 </script>
 
 </body>
-  </html>
+</html>
