@@ -304,6 +304,26 @@
       gap: 14px;
     }
 
+    .extra-product {
+      display: none;
+    }
+
+    .extra-product.show {
+      display: block;
+    }
+
+    .add-product-btn {
+      width: 100%;
+      background: #eaf3ee;
+      color: #12372a;
+      border: 2px dashed #9db9aa;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     .how {
       background: #eaf3ee;
       border-radius: 18px;
@@ -419,13 +439,11 @@
 <body>
 
 <header>
-
   <div class="brand">
     تسويمة | TASWIMA
   </div>
 
   <div class="header-actions">
-
     <a
       id="topWhatsapp"
       class="whatsapp-top"
@@ -438,9 +456,7 @@
     <button class="lang-btn" onclick="toggleLanguage()">
       AR / EN
     </button>
-
   </div>
-
 </header>
 
 <section class="hero">
@@ -543,7 +559,7 @@
       <h2 class="en">Request a Quote</h2>
 
       <p class="ar">
-        اطلب عدة منتجات تغليف في نفس الطلب.
+        اطلب أكثر من منتج تغليف في نفس الطلب.
       </p>
 
       <p class="en">
@@ -610,13 +626,8 @@
 
   <div id="buyerForm" class="form-card">
 
-    <h2 class="ar">
-      طلب تسعيرة تغليف
-    </h2>
-
-    <h2 class="en">
-      Packaging Quote Request
-    </h2>
+    <h2 class="ar">طلب تسعيرة تغليف</h2>
+    <h2 class="en">Packaging Quote Request</h2>
 
     <form
       action="https://formspree.io/f/mjyvezde"
@@ -654,20 +665,18 @@
       </div>
 
       <div class="helper-text">
-
         <span class="ar">
-          تقدر تطلب إلى 5 منتجات مختلفة في نفس الطلب. عبّي المنتج الأول، وبعده أي منتجات إضافية تحتاجها واترك الباقي فاضي.
+          ابدأ بالمنتج الأول، وإذا تحتاج أكثر اضغط على زر إضافة منتج.
         </span>
 
         <span class="en">
-          You can request up to 5 different products in one submission.
+          Start with Product 1. If you need more, press Add Product.
         </span>
-
       </div>
 
       <!-- PRODUCT 1 -->
 
-      <div class="product-item">
+      <div id="product1" class="product-item">
 
         <div class="product-item-title">
           <span class="ar">المنتج 1</span>
@@ -677,7 +686,6 @@
         <div class="product-grid">
 
           <div>
-
             <label class="ar">نوع التغليف</label>
             <label class="en">Packaging Type</label>
 
@@ -686,116 +694,32 @@
               class="bilingual-select"
               required
             >
-
-              <option value="" data-ar="اختر" data-en="Select">
-                اختر
-              </option>
-
-              <option
-                value="Cartons & Boxes"
-                data-ar="كراتين وصناديق"
-                data-en="Cartons & Boxes"
-              >
-                كراتين وصناديق
-              </option>
-
-              <option
-                value="Food Containers"
-                data-ar="علب طعام"
-                data-en="Food Containers"
-              >
-                علب طعام
-              </option>
-
-              <option
-                value="Paper Bags"
-                data-ar="أكياس ورقية"
-                data-en="Paper Bags"
-              >
-                أكياس ورقية
-              </option>
-
-              <option
-                value="Plastic Bags"
-                data-ar="أكياس بلاستيكية"
-                data-en="Plastic Bags"
-              >
-                أكياس بلاستيكية
-              </option>
-
-              <option
-                value="Cups & Containers"
-                data-ar="أكواب وعبوات"
-                data-en="Cups & Containers"
-              >
-                أكواب وعبوات
-              </option>
-
-              <option
-                value="Fruit & Vegetable Packaging"
-                data-ar="تغليف خضار وفواكه"
-                data-en="Fruit & Vegetable Packaging"
-              >
-                تغليف خضار وفواكه
-              </option>
-
-              <option
-                value="Eco-Friendly Packaging"
-                data-ar="تغليف صديق للبيئة"
-                data-en="Eco-Friendly Packaging"
-              >
-                تغليف صديق للبيئة
-              </option>
-
-              <option
-                value="Custom Printed Packaging"
-                data-ar="تغليف بطباعة مخصصة"
-                data-en="Custom Printed Packaging"
-              >
-                تغليف بطباعة مخصصة
-              </option>
-
-              <option
-                value="Other"
-                data-ar="أخرى"
-                data-en="Other"
-              >
-                أخرى
-              </option>
-
+              <option value="" data-ar="اختر" data-en="Select">اختر</option>
+              <option value="Cartons & Boxes" data-ar="كراتين وصناديق" data-en="Cartons & Boxes">كراتين وصناديق</option>
+              <option value="Food Containers" data-ar="علب طعام" data-en="Food Containers">علب طعام</option>
+              <option value="Paper Bags" data-ar="أكياس ورقية" data-en="Paper Bags">أكياس ورقية</option>
+              <option value="Plastic Bags" data-ar="أكياس بلاستيكية" data-en="Plastic Bags">أكياس بلاستيكية</option>
+              <option value="Cups & Containers" data-ar="أكواب وعبوات" data-en="Cups & Containers">أكواب وعبوات</option>
+              <option value="Fruit & Vegetable Packaging" data-ar="تغليف خضار وفواكه" data-en="Fruit & Vegetable Packaging">تغليف خضار وفواكه</option>
+              <option value="Eco-Friendly Packaging" data-ar="تغليف صديق للبيئة" data-en="Eco-Friendly Packaging">تغليف صديق للبيئة</option>
+              <option value="Custom Printed Packaging" data-ar="تغليف بطباعة مخصصة" data-en="Custom Printed Packaging">تغليف بطباعة مخصصة</option>
+              <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
             </select>
-
           </div>
 
           <div>
-
             <label class="ar">اسم / وصف المنتج</label>
             <label class="en">Product Description</label>
-
-            <input
-              type="text"
-              name="product_1_description"
-              required
-            >
-
+            <input type="text" name="product_1_description" required>
           </div>
 
           <div>
-
             <label class="ar">الكمية</label>
             <label class="en">Quantity</label>
-
-            <input
-              type="number"
-              min="1"
-              name="product_1_quantity"
-              required
-            >
-
+            <input type="number" min="1" name="product_1_quantity" required>
           </div>
 
           <div>
-
             <label class="ar">الوحدة</label>
             <label class="en">Unit</label>
 
@@ -804,43 +728,19 @@
               class="bilingual-select"
               required
             >
-
-              <option value="" data-ar="اختر" data-en="Select">
-                اختر
-              </option>
-
-              <option value="Pieces" data-ar="قطعة" data-en="Pieces">
-                قطعة
-              </option>
-
-              <option value="Cartons" data-ar="كرتون" data-en="Cartons">
-                كرتون
-              </option>
-
-              <option value="Packs" data-ar="باكيت" data-en="Packs">
-                باكيت
-              </option>
-
-              <option value="Rolls" data-ar="رول" data-en="Rolls">
-                رول
-              </option>
-
-              <option value="Kilograms" data-ar="كيلو" data-en="Kilograms">
-                كيلو
-              </option>
-
-              <option value="Other" data-ar="أخرى" data-en="Other">
-                أخرى
-              </option>
-
+              <option value="" data-ar="اختر" data-en="Select">اختر</option>
+              <option value="Pieces" data-ar="قطعة" data-en="Pieces">قطعة</option>
+              <option value="Cartons" data-ar="كرتون" data-en="Cartons">كرتون</option>
+              <option value="Packs" data-ar="باكيت" data-en="Packs">باكيت</option>
+              <option value="Rolls" data-ar="رول" data-en="Rolls">رول</option>
+              <option value="Kilograms" data-ar="كيلو" data-en="Kilograms">كيلو</option>
+              <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
             </select>
-
           </div>
 
         </div>
 
         <div>
-
           <label class="ar">الخامة</label>
           <label class="en">Material</label>
 
@@ -848,57 +748,17 @@
             name="product_1_material"
             class="bilingual-select"
           >
-
-            <option
-              value=""
-              data-ar="غير محدد"
-              data-en="Not Specified"
-            >
-              غير محدد
-            </option>
-
-            <option value="Paper" data-ar="ورق" data-en="Paper">
-              ورق
-            </option>
-
-            <option value="Cardboard" data-ar="كرتون" data-en="Cardboard">
-              كرتون
-            </option>
-
-            <option value="Plastic" data-ar="بلاستيك" data-en="Plastic">
-              بلاستيك
-            </option>
-
-            <option
-              value="Biodegradable"
-              data-ar="قابل للتحلل الحيوي"
-              data-en="Biodegradable"
-            >
-              قابل للتحلل الحيوي
-            </option>
-
-            <option
-              value="Compostable"
-              data-ar="قابل للتسميد"
-              data-en="Compostable"
-            >
-              قابل للتسميد
-            </option>
-
-            <option
-              value="Not Sure"
-              data-ar="غير متأكد"
-              data-en="Not Sure"
-            >
-              غير متأكد
-            </option>
-
+            <option value="" data-ar="غير محدد" data-en="Not Specified">غير محدد</option>
+            <option value="Paper" data-ar="ورق" data-en="Paper">ورق</option>
+            <option value="Cardboard" data-ar="كرتون" data-en="Cardboard">كرتون</option>
+            <option value="Plastic" data-ar="بلاستيك" data-en="Plastic">بلاستيك</option>
+            <option value="Biodegradable" data-ar="قابل للتحلل الحيوي" data-en="Biodegradable">قابل للتحلل الحيوي</option>
+            <option value="Compostable" data-ar="قابل للتسميد" data-en="Compostable">قابل للتسميد</option>
+            <option value="Not Sure" data-ar="غير متأكد" data-en="Not Sure">غير متأكد</option>
           </select>
-
         </div>
 
         <div>
-
           <label class="ar">هل تحتاج طباعة شعار؟</label>
           <label class="en">Logo Printing?</label>
 
@@ -906,44 +766,23 @@
             name="product_1_printing"
             class="bilingual-select"
           >
-
-            <option value="" data-ar="اختر" data-en="Select">
-              اختر
-            </option>
-
-            <option value="Yes" data-ar="نعم" data-en="Yes">
-              نعم
-            </option>
-
-            <option value="No" data-ar="لا" data-en="No">
-              لا
-            </option>
-
+            <option value="" data-ar="اختر" data-en="Select">اختر</option>
+            <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
+            <option value="No" data-ar="لا" data-en="No">لا</option>
           </select>
-
         </div>
 
         <div>
-
-          <label class="ar">
-            المقاس والمواصفات
-          </label>
-
-          <label class="en">
-            Size & Specifications
-          </label>
-
-          <textarea
-            name="product_1_specifications"
-          ></textarea>
-
+          <label class="ar">المقاس والمواصفات</label>
+          <label class="en">Size & Specifications</label>
+          <textarea name="product_1_specifications"></textarea>
         </div>
 
       </div>
 
       <!-- PRODUCT 2 -->
 
-      <div class="product-item">
+      <div id="product2" class="product-item extra-product">
 
         <div class="product-item-title">
           <span class="ar">المنتج 2</span>
@@ -953,7 +792,6 @@
         <div class="product-grid">
 
           <div>
-
             <label class="ar">نوع التغليف</label>
             <label class="en">Packaging Type</label>
 
@@ -961,114 +799,32 @@
               name="product_2_type"
               class="bilingual-select"
             >
-
-              <option value="" data-ar="اختر" data-en="Select">
-                اختر
-              </option>
-
-              <option
-                value="Cartons & Boxes"
-                data-ar="كراتين وصناديق"
-                data-en="Cartons & Boxes"
-              >
-                كراتين وصناديق
-              </option>
-
-              <option
-                value="Food Containers"
-                data-ar="علب طعام"
-                data-en="Food Containers"
-              >
-                علب طعام
-              </option>
-
-              <option
-                value="Paper Bags"
-                data-ar="أكياس ورقية"
-                data-en="Paper Bags"
-              >
-                أكياس ورقية
-              </option>
-
-              <option
-                value="Plastic Bags"
-                data-ar="أكياس بلاستيكية"
-                data-en="Plastic Bags"
-              >
-                أكياس بلاستيكية
-              </option>
-
-              <option
-                value="Cups & Containers"
-                data-ar="أكواب وعبوات"
-                data-en="Cups & Containers"
-              >
-                أكواب وعبوات
-              </option>
-
-              <option
-                value="Fruit & Vegetable Packaging"
-                data-ar="تغليف خضار وفواكه"
-                data-en="Fruit & Vegetable Packaging"
-              >
-                تغليف خضار وفواكه
-              </option>
-
-              <option
-                value="Eco-Friendly Packaging"
-                data-ar="تغليف صديق للبيئة"
-                data-en="Eco-Friendly Packaging"
-              >
-                تغليف صديق للبيئة
-              </option>
-
-              <option
-                value="Custom Printed Packaging"
-                data-ar="تغليف بطباعة مخصصة"
-                data-en="Custom Printed Packaging"
-              >
-                تغليف بطباعة مخصصة
-              </option>
-
-              <option
-                value="Other"
-                data-ar="أخرى"
-                data-en="Other"
-              >
-                أخرى
-              </option>
-
+              <option value="" data-ar="اختر" data-en="Select">اختر</option>
+              <option value="Cartons & Boxes" data-ar="كراتين وصناديق" data-en="Cartons & Boxes">كراتين وصناديق</option>
+              <option value="Food Containers" data-ar="علب طعام" data-en="Food Containers">علب طعام</option>
+              <option value="Paper Bags" data-ar="أكياس ورقية" data-en="Paper Bags">أكياس ورقية</option>
+              <option value="Plastic Bags" data-ar="أكياس بلاستيكية" data-en="Plastic Bags">أكياس بلاستيكية</option>
+              <option value="Cups & Containers" data-ar="أكواب وعبوات" data-en="Cups & Containers">أكواب وعبوات</option>
+              <option value="Fruit & Vegetable Packaging" data-ar="تغليف خضار وفواكه" data-en="Fruit & Vegetable Packaging">تغليف خضار وفواكه</option>
+              <option value="Eco-Friendly Packaging" data-ar="تغليف صديق للبيئة" data-en="Eco-Friendly Packaging">تغليف صديق للبيئة</option>
+              <option value="Custom Printed Packaging" data-ar="تغليف بطباعة مخصصة" data-en="Custom Printed Packaging">تغليف بطباعة مخصصة</option>
+              <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
             </select>
-
           </div>
 
           <div>
-
             <label class="ar">اسم / وصف المنتج</label>
             <label class="en">Product Description</label>
-
-            <input
-              type="text"
-              name="product_2_description"
-            >
-
+            <input type="text" name="product_2_description">
           </div>
 
           <div>
-
             <label class="ar">الكمية</label>
             <label class="en">Quantity</label>
-
-            <input
-              type="number"
-              min="1"
-              name="product_2_quantity"
-            >
-
+            <input type="number" min="1" name="product_2_quantity">
           </div>
 
           <div>
-
             <label class="ar">الوحدة</label>
             <label class="en">Unit</label>
 
@@ -1076,43 +832,19 @@
               name="product_2_unit"
               class="bilingual-select"
             >
-
-              <option value="" data-ar="اختر" data-en="Select">
-                اختر
-              </option>
-
-              <option value="Pieces" data-ar="قطعة" data-en="Pieces">
-                قطعة
-              </option>
-
-              <option value="Cartons" data-ar="كرتون" data-en="Cartons">
-                كرتون
-              </option>
-
-              <option value="Packs" data-ar="باكيت" data-en="Packs">
-                باكيت
-              </option>
-
-              <option value="Rolls" data-ar="رول" data-en="Rolls">
-                رول
-              </option>
-
-              <option value="Kilograms" data-ar="كيلو" data-en="Kilograms">
-                كيلو
-              </option>
-
-              <option value="Other" data-ar="أخرى" data-en="Other">
-                أخرى
-              </option>
-
+              <option value="" data-ar="اختر" data-en="Select">اختر</option>
+              <option value="Pieces" data-ar="قطعة" data-en="Pieces">قطعة</option>
+              <option value="Cartons" data-ar="كرتون" data-en="Cartons">كرتون</option>
+              <option value="Packs" data-ar="باكيت" data-en="Packs">باكيت</option>
+              <option value="Rolls" data-ar="رول" data-en="Rolls">رول</option>
+              <option value="Kilograms" data-ar="كيلو" data-en="Kilograms">كيلو</option>
+              <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
             </select>
-
           </div>
 
         </div>
 
         <div>
-
           <label class="ar">الخامة</label>
           <label class="en">Material</label>
 
@@ -1120,57 +852,17 @@
             name="product_2_material"
             class="bilingual-select"
           >
-
-            <option
-              value=""
-              data-ar="غير محدد"
-              data-en="Not Specified"
-            >
-              غير محدد
-            </option>
-
-            <option value="Paper" data-ar="ورق" data-en="Paper">
-              ورق
-            </option>
-
-            <option value="Cardboard" data-ar="كرتون" data-en="Cardboard">
-              كرتون
-            </option>
-
-            <option value="Plastic" data-ar="بلاستيك" data-en="Plastic">
-              بلاستيك
-            </option>
-
-            <option
-              value="Biodegradable"
-              data-ar="قابل للتحلل الحيوي"
-              data-en="Biodegradable"
-            >
-              قابل للتحلل الحيوي
-            </option>
-
-            <option
-              value="Compostable"
-              data-ar="قابل للتسميد"
-              data-en="Compostable"
-            >
-              قابل للتسميد
-            </option>
-
-            <option
-              value="Not Sure"
-              data-ar="غير متأكد"
-              data-en="Not Sure"
-            >
-              غير متأكد
-            </option>
-
+            <option value="" data-ar="غير محدد" data-en="Not Specified">غير محدد</option>
+            <option value="Paper" data-ar="ورق" data-en="Paper">ورق</option>
+            <option value="Cardboard" data-ar="كرتون" data-en="Cardboard">كرتون</option>
+            <option value="Plastic" data-ar="بلاستيك" data-en="Plastic">بلاستيك</option>
+            <option value="Biodegradable" data-ar="قابل للتحلل الحيوي" data-en="Biodegradable">قابل للتحلل الحيوي</option>
+            <option value="Compostable" data-ar="قابل للتسميد" data-en="Compostable">قابل للتسميد</option>
+            <option value="Not Sure" data-ar="غير متأكد" data-en="Not Sure">غير متأكد</option>
           </select>
-
         </div>
 
         <div>
-
           <label class="ar">هل تحتاج طباعة شعار؟</label>
           <label class="en">Logo Printing?</label>
 
@@ -1178,37 +870,23 @@
             name="product_2_printing"
             class="bilingual-select"
           >
-
-            <option value="" data-ar="اختر" data-en="Select">
-              اختر
-            </option>
-
-            <option value="Yes" data-ar="نعم" data-en="Yes">
-              نعم
-            </option>
-
-            <option value="No" data-ar="لا" data-en="No">
-              لا
-            </option>
-
+            <option value="" data-ar="اختر" data-en="Select">اختر</option>
+            <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
+            <option value="No" data-ar="لا" data-en="No">لا</option>
           </select>
-
         </div>
 
         <div>
           <label class="ar">المقاس والمواصفات</label>
           <label class="en">Size & Specifications</label>
-
-          <textarea
-            name="product_2_specifications"
-          ></textarea>
+          <textarea name="product_2_specifications"></textarea>
         </div>
 
       </div>
 
       <!-- PRODUCT 3 -->
 
-      <div class="product-item">
+      <div id="product3" class="product-item extra-product">
 
         <div class="product-item-title">
           <span class="ar">المنتج 3</span>
@@ -1218,136 +896,48 @@
         <div class="product-grid">
 
           <div>
-
             <label class="ar">نوع التغليف</label>
             <label class="en">Packaging Type</label>
 
-            <select
-              name="product_3_type"
-              class="bilingual-select"
-            >
-
-              <option value="" data-ar="اختر" data-en="Select">
-                اختر
-              </option>
-
-              <option value="Cartons & Boxes"
-                data-ar="كراتين وصناديق"
-                data-en="Cartons & Boxes">
-                كراتين وصناديق
-              </option>
-
-              <option value="Food Containers"
-                data-ar="علب طعام"
-                data-en="Food Containers">
-                علب طعام
-              </option>
-
-              <option value="Paper Bags"
-                data-ar="أكياس ورقية"
-                data-en="Paper Bags">
-                أكياس ورقية
-              </option>
-
-              <option value="Plastic Bags"
-                data-ar="أكياس بلاستيكية"
-                data-en="Plastic Bags">
-                أكياس بلاستيكية
-              </option>
-
-              <option value="Cups & Containers"
-                data-ar="أكواب وعبوات"
-                data-en="Cups & Containers">
-                أكواب وعبوات
-              </option>
-
-              <option value="Fruit & Vegetable Packaging"
-                data-ar="تغليف خضار وفواكه"
-                data-en="Fruit & Vegetable Packaging">
-                تغليف خضار وفواكه
-              </option>
-
-              <option value="Eco-Friendly Packaging"
-                data-ar="تغليف صديق للبيئة"
-                data-en="Eco-Friendly Packaging">
-                تغليف صديق للبيئة
-              </option>
-
-              <option value="Custom Printed Packaging"
-                data-ar="تغليف بطباعة مخصصة"
-                data-en="Custom Printed Packaging">
-                تغليف بطباعة مخصصة
-              </option>
-
-              <option value="Other"
-                data-ar="أخرى"
-                data-en="Other">
-                أخرى
-              </option>
-
+            <select name="product_3_type" class="bilingual-select">
+              <option value="" data-ar="اختر" data-en="Select">اختر</option>
+              <option value="Cartons & Boxes" data-ar="كراتين وصناديق" data-en="Cartons & Boxes">كراتين وصناديق</option>
+              <option value="Food Containers" data-ar="علب طعام" data-en="Food Containers">علب طعام</option>
+              <option value="Paper Bags" data-ar="أكياس ورقية" data-en="Paper Bags">أكياس ورقية</option>
+              <option value="Plastic Bags" data-ar="أكياس بلاستيكية" data-en="Plastic Bags">أكياس بلاستيكية</option>
+              <option value="Cups & Containers" data-ar="أكواب وعبوات" data-en="Cups & Containers">أكواب وعبوات</option>
+              <option value="Fruit & Vegetable Packaging" data-ar="تغليف خضار وفواكه" data-en="Fruit & Vegetable Packaging">تغليف خضار وفواكه</option>
+              <option value="Eco-Friendly Packaging" data-ar="تغليف صديق للبيئة" data-en="Eco-Friendly Packaging">تغليف صديق للبيئة</option>
+              <option value="Custom Printed Packaging" data-ar="تغليف بطباعة مخصصة" data-en="Custom Printed Packaging">تغليف بطباعة مخصصة</option>
+              <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
             </select>
-
           </div>
 
           <div>
             <label class="ar">اسم / وصف المنتج</label>
             <label class="en">Product Description</label>
-            <input
-              type="text"
-              name="product_3_description"
-            >
+            <input type="text" name="product_3_description">
           </div>
 
           <div>
             <label class="ar">الكمية</label>
             <label class="en">Quantity</label>
-            <input
-              type="number"
-              min="1"
-              name="product_3_quantity"
-            >
+            <input type="number" min="1" name="product_3_quantity">
           </div>
 
           <div>
-
             <label class="ar">الوحدة</label>
             <label class="en">Unit</label>
 
-            <select
-              name="product_3_unit"
-              class="bilingual-select"
-            >
-
-              <option value="" data-ar="اختر" data-en="Select">
-                اختر
-              </option>
-
-              <option value="Pieces" data-ar="قطعة" data-en="Pieces">
-                قطعة
-              </option>
-
-              <option value="Cartons" data-ar="كرتون" data-en="Cartons">
-                كرتون
-              </option>
-
-              <option value="Packs" data-ar="باكيت" data-en="Packs">
-                باكيت
-              </option>
-
-              <option value="Rolls" data-ar="رول" data-en="Rolls">
-                رول
-              </option>
-
-              <option value="Kilograms" data-ar="كيلو" data-en="Kilograms">
-                كيلو
-              </option>
-
-              <option value="Other" data-ar="أخرى" data-en="Other">
-                أخرى
-              </option>
-
+            <select name="product_3_unit" class="bilingual-select">
+              <option value="" data-ar="اختر" data-en="Select">اختر</option>
+              <option value="Pieces" data-ar="قطعة" data-en="Pieces">قطعة</option>
+              <option value="Cartons" data-ar="كرتون" data-en="Cartons">كرتون</option>
+              <option value="Packs" data-ar="باكيت" data-en="Packs">باكيت</option>
+              <option value="Rolls" data-ar="رول" data-en="Rolls">رول</option>
+              <option value="Kilograms" data-ar="كيلو" data-en="Kilograms">كيلو</option>
+              <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
             </select>
-
           </div>
 
         </div>
@@ -1356,74 +946,26 @@
           <label class="ar">الخامة</label>
           <label class="en">Material</label>
 
-          <select
-            name="product_3_material"
-            class="bilingual-select"
-          >
-
-            <option value=""
-              data-ar="غير محدد"
-              data-en="Not Specified">
-              غير محدد
-            </option>
-
-            <option value="Paper" data-ar="ورق" data-en="Paper">
-              ورق
-            </option>
-
-            <option value="Cardboard" data-ar="كرتون" data-en="Cardboard">
-              كرتون
-            </option>
-
-            <option value="Plastic" data-ar="بلاستيك" data-en="Plastic">
-              بلاستيك
-            </option>
-
-            <option value="Biodegradable"
-              data-ar="قابل للتحلل الحيوي"
-              data-en="Biodegradable">
-              قابل للتحلل الحيوي
-            </option>
-
-            <option value="Compostable"
-              data-ar="قابل للتسميد"
-              data-en="Compostable">
-              قابل للتسميد
-            </option>
-
-            <option value="Not Sure"
-              data-ar="غير متأكد"
-              data-en="Not Sure">
-              غير متأكد
-            </option>
-
+          <select name="product_3_material" class="bilingual-select">
+            <option value="" data-ar="غير محدد" data-en="Not Specified">غير محدد</option>
+            <option value="Paper" data-ar="ورق" data-en="Paper">ورق</option>
+            <option value="Cardboard" data-ar="كرتون" data-en="Cardboard">كرتون</option>
+            <option value="Plastic" data-ar="بلاستيك" data-en="Plastic">بلاستيك</option>
+            <option value="Biodegradable" data-ar="قابل للتحلل الحيوي" data-en="Biodegradable">قابل للتحلل الحيوي</option>
+            <option value="Compostable" data-ar="قابل للتسميد" data-en="Compostable">قابل للتسميد</option>
+            <option value="Not Sure" data-ar="غير متأكد" data-en="Not Sure">غير متأكد</option>
           </select>
-
         </div>
 
         <div>
           <label class="ar">هل تحتاج طباعة شعار؟</label>
           <label class="en">Logo Printing?</label>
 
-          <select
-            name="product_3_printing"
-            class="bilingual-select"
-          >
-
-            <option value="" data-ar="اختر" data-en="Select">
-              اختر
-            </option>
-
-            <option value="Yes" data-ar="نعم" data-en="Yes">
-              نعم
-            </option>
-
-            <option value="No" data-ar="لا" data-en="No">
-              لا
-            </option>
-
+          <select name="product_3_printing" class="bilingual-select">
+            <option value="" data-ar="اختر" data-en="Select">اختر</option>
+            <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
+            <option value="No" data-ar="لا" data-en="No">لا</option>
           </select>
-
         </div>
 
         <div>
@@ -1436,7 +978,7 @@
 
       <!-- PRODUCT 4 -->
 
-      <div class="product-item">
+      <div id="product4" class="product-item extra-product">
 
         <div class="product-item-title">
           <span class="ar">المنتج 4</span>
@@ -1446,15 +988,10 @@
         <div class="product-grid">
 
           <div>
-
             <label class="ar">نوع التغليف</label>
             <label class="en">Packaging Type</label>
 
-            <select
-              name="product_4_type"
-              class="bilingual-select"
-            >
-
+            <select name="product_4_type" class="bilingual-select">
               <option value="" data-ar="اختر" data-en="Select">اختر</option>
               <option value="Cartons & Boxes" data-ar="كراتين وصناديق" data-en="Cartons & Boxes">كراتين وصناديق</option>
               <option value="Food Containers" data-ar="علب طعام" data-en="Food Containers">علب طعام</option>
@@ -1465,9 +1002,7 @@
               <option value="Eco-Friendly Packaging" data-ar="تغليف صديق للبيئة" data-en="Eco-Friendly Packaging">تغليف صديق للبيئة</option>
               <option value="Custom Printed Packaging" data-ar="تغليف بطباعة مخصصة" data-en="Custom Printed Packaging">تغليف بطباعة مخصصة</option>
               <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
-
             </select>
-
           </div>
 
           <div>
@@ -1483,15 +1018,10 @@
           </div>
 
           <div>
-
             <label class="ar">الوحدة</label>
             <label class="en">Unit</label>
 
-            <select
-              name="product_4_unit"
-              class="bilingual-select"
-            >
-
+            <select name="product_4_unit" class="bilingual-select">
               <option value="" data-ar="اختر" data-en="Select">اختر</option>
               <option value="Pieces" data-ar="قطعة" data-en="Pieces">قطعة</option>
               <option value="Cartons" data-ar="كرتون" data-en="Cartons">كرتون</option>
@@ -1499,9 +1029,7 @@
               <option value="Rolls" data-ar="رول" data-en="Rolls">رول</option>
               <option value="Kilograms" data-ar="كيلو" data-en="Kilograms">كيلو</option>
               <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
-
             </select>
-
           </div>
 
         </div>
@@ -1510,11 +1038,7 @@
           <label class="ar">الخامة</label>
           <label class="en">Material</label>
 
-          <select
-            name="product_4_material"
-            class="bilingual-select"
-          >
-
+          <select name="product_4_material" class="bilingual-select">
             <option value="" data-ar="غير محدد" data-en="Not Specified">غير محدد</option>
             <option value="Paper" data-ar="ورق" data-en="Paper">ورق</option>
             <option value="Cardboard" data-ar="كرتون" data-en="Cardboard">كرتون</option>
@@ -1522,26 +1046,18 @@
             <option value="Biodegradable" data-ar="قابل للتحلل الحيوي" data-en="Biodegradable">قابل للتحلل الحيوي</option>
             <option value="Compostable" data-ar="قابل للتسميد" data-en="Compostable">قابل للتسميد</option>
             <option value="Not Sure" data-ar="غير متأكد" data-en="Not Sure">غير متأكد</option>
-
           </select>
-
         </div>
 
         <div>
           <label class="ar">هل تحتاج طباعة شعار؟</label>
           <label class="en">Logo Printing?</label>
 
-          <select
-            name="product_4_printing"
-            class="bilingual-select"
-          >
-
+          <select name="product_4_printing" class="bilingual-select">
             <option value="" data-ar="اختر" data-en="Select">اختر</option>
             <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
             <option value="No" data-ar="لا" data-en="No">لا</option>
-
           </select>
-
         </div>
 
         <div>
@@ -1554,7 +1070,7 @@
 
       <!-- PRODUCT 5 -->
 
-      <div class="product-item">
+      <div id="product5" class="product-item extra-product">
 
         <div class="product-item-title">
           <span class="ar">المنتج 5</span>
@@ -1564,15 +1080,10 @@
         <div class="product-grid">
 
           <div>
-
             <label class="ar">نوع التغليف</label>
             <label class="en">Packaging Type</label>
 
-            <select
-              name="product_5_type"
-              class="bilingual-select"
-            >
-
+            <select name="product_5_type" class="bilingual-select">
               <option value="" data-ar="اختر" data-en="Select">اختر</option>
               <option value="Cartons & Boxes" data-ar="كراتين وصناديق" data-en="Cartons & Boxes">كراتين وصناديق</option>
               <option value="Food Containers" data-ar="علب طعام" data-en="Food Containers">علب طعام</option>
@@ -1583,9 +1094,7 @@
               <option value="Eco-Friendly Packaging" data-ar="تغليف صديق للبيئة" data-en="Eco-Friendly Packaging">تغليف صديق للبيئة</option>
               <option value="Custom Printed Packaging" data-ar="تغليف بطباعة مخصصة" data-en="Custom Printed Packaging">تغليف بطباعة مخصصة</option>
               <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
-
             </select>
-
           </div>
 
           <div>
@@ -1601,15 +1110,10 @@
           </div>
 
           <div>
-
             <label class="ar">الوحدة</label>
             <label class="en">Unit</label>
 
-            <select
-              name="product_5_unit"
-              class="bilingual-select"
-            >
-
+            <select name="product_5_unit" class="bilingual-select">
               <option value="" data-ar="اختر" data-en="Select">اختر</option>
               <option value="Pieces" data-ar="قطعة" data-en="Pieces">قطعة</option>
               <option value="Cartons" data-ar="كرتون" data-en="Cartons">كرتون</option>
@@ -1617,9 +1121,7 @@
               <option value="Rolls" data-ar="رول" data-en="Rolls">رول</option>
               <option value="Kilograms" data-ar="كيلو" data-en="Kilograms">كيلو</option>
               <option value="Other" data-ar="أخرى" data-en="Other">أخرى</option>
-
             </select>
-
           </div>
 
         </div>
@@ -1628,11 +1130,7 @@
           <label class="ar">الخامة</label>
           <label class="en">Material</label>
 
-          <select
-            name="product_5_material"
-            class="bilingual-select"
-          >
-
+          <select name="product_5_material" class="bilingual-select">
             <option value="" data-ar="غير محدد" data-en="Not Specified">غير محدد</option>
             <option value="Paper" data-ar="ورق" data-en="Paper">ورق</option>
             <option value="Cardboard" data-ar="كرتون" data-en="Cardboard">كرتون</option>
@@ -1640,26 +1138,18 @@
             <option value="Biodegradable" data-ar="قابل للتحلل الحيوي" data-en="Biodegradable">قابل للتحلل الحيوي</option>
             <option value="Compostable" data-ar="قابل للتسميد" data-en="Compostable">قابل للتسميد</option>
             <option value="Not Sure" data-ar="غير متأكد" data-en="Not Sure">غير متأكد</option>
-
           </select>
-
         </div>
 
         <div>
           <label class="ar">هل تحتاج طباعة شعار؟</label>
           <label class="en">Logo Printing?</label>
 
-          <select
-            name="product_5_printing"
-            class="bilingual-select"
-          >
-
+          <select name="product_5_printing" class="bilingual-select">
             <option value="" data-ar="اختر" data-en="Select">اختر</option>
             <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
             <option value="No" data-ar="لا" data-en="No">لا</option>
-
           </select>
-
         </div>
 
         <div>
@@ -1669,6 +1159,16 @@
         </div>
 
       </div>
+
+      <button
+        id="addProductBtn"
+        type="button"
+        class="add-product-btn"
+        onclick="showNextProduct()"
+      >
+        <span class="ar">＋ إضافة منتج</span>
+        <span class="en">＋ Add Product</span>
+      </button>
 
       <div>
         <label class="ar">موعد التوريد المطلوب</label>
@@ -1708,13 +1208,8 @@
 
   <div id="supplierForm" class="form-card">
 
-    <h2 class="ar">
-      تسجيل مورد تغليف
-    </h2>
-
-    <h2 class="en">
-      Packaging Supplier Registration
-    </h2>
+    <h2 class="ar">تسجيل مورد تغليف</h2>
+    <h2 class="en">Packaging Supplier Registration</h2>
 
     <form
       action="https://formspree.io/f/mjyvezde"
@@ -1758,65 +1253,25 @@
       </div>
 
       <div>
+        <label class="ar">هل توفر طباعة مخصصة؟</label>
+        <label class="en">Custom Printing Available?</label>
 
-        <label class="ar">
-          هل توفر طباعة مخصصة؟
-        </label>
-
-        <label class="en">
-          Custom Printing Available?
-        </label>
-
-        <select
-          name="custom_printing"
-          class="bilingual-select"
-        >
-
-          <option value="" data-ar="اختر" data-en="Select">
-            اختر
-          </option>
-
-          <option value="Yes" data-ar="نعم" data-en="Yes">
-            نعم
-          </option>
-
-          <option value="No" data-ar="لا" data-en="No">
-            لا
-          </option>
-
+        <select name="custom_printing" class="bilingual-select">
+          <option value="" data-ar="اختر" data-en="Select">اختر</option>
+          <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
+          <option value="No" data-ar="لا" data-en="No">لا</option>
         </select>
-
       </div>
 
       <div>
+        <label class="ar">هل عندكم منتجات صديقة للبيئة؟</label>
+        <label class="en">Do you offer eco-friendly packaging?</label>
 
-        <label class="ar">
-          هل عندكم منتجات صديقة للبيئة؟
-        </label>
-
-        <label class="en">
-          Do you offer eco-friendly packaging?
-        </label>
-
-        <select
-          name="eco_friendly"
-          class="bilingual-select"
-        >
-
-          <option value="" data-ar="اختر" data-en="Select">
-            اختر
-          </option>
-
-          <option value="Yes" data-ar="نعم" data-en="Yes">
-            نعم
-          </option>
-
-          <option value="No" data-ar="لا" data-en="No">
-            لا
-          </option>
-
+        <select name="eco_friendly" class="bilingual-select">
+          <option value="" data-ar="اختر" data-en="Select">اختر</option>
+          <option value="Yes" data-ar="نعم" data-en="Yes">نعم</option>
+          <option value="No" data-ar="لا" data-en="No">لا</option>
         </select>
-
       </div>
 
       <div>
@@ -1832,31 +1287,19 @@
       </div>
 
       <div>
-
-        <label class="ar">
-          قائمة الأسعار والكميات
-        </label>
-
-        <label class="en">
-          Price List & Quantity Tiers
-        </label>
+        <label class="ar">قائمة الأسعار والكميات</label>
+        <label class="en">Price List & Quantity Tiers</label>
 
         <a
           href="TASWIMA_Supplier_Price_List_Template.xlsx"
           class="download-btn"
           download
         >
-          <span class="ar">
-            ⬇️ تحميل قالب تسويمة لقائمة الأسعار
-          </span>
-
-          <span class="en">
-            ⬇️ Download TASWIMA Price List Template
-          </span>
+          <span class="ar">⬇️ تحميل قالب تسويمة لقائمة الأسعار</span>
+          <span class="en">⬇️ Download TASWIMA Price List Template</span>
         </a>
 
         <div class="helper-text">
-
           <span class="ar">
             حمّل القالب، عبّيه بالمنتجات والأسعار والكميات، وبعدها ارفعه على Google Drive أو OneDrive والصق الرابط في الخانة تحت.
           </span>
@@ -1864,15 +1307,12 @@
           <span class="en">
             Download the template, complete your products, prices and quantity tiers, then upload it to Google Drive or OneDrive and paste the share link below.
           </span>
-
         </div>
-
       </div>
 
       <div>
         <label class="ar">رابط قائمة الأسعار</label>
         <label class="en">Price List Link</label>
-
         <input
           type="url"
           name="price_list_link"
@@ -1906,62 +1346,39 @@
 
   <div class="how">
 
-    <h2 class="ar">
-      كيف تشتغل تسويمة؟
-    </h2>
-
-    <h2 class="en">
-      How Taswima Works
-    </h2>
+    <h2 class="ar">كيف تشتغل تسويمة؟</h2>
+    <h2 class="en">How Taswima Works</h2>
 
     <div class="steps">
 
       <div class="step">
-
-        <div class="step-number">
-          1
-        </div>
-
+        <div class="step-number">1</div>
         <span class="ar">
-          العميل يضيف عدة منتجات في طلب واحد.
+          العميل يضيف كل المنتجات المطلوبة في طلب واحد.
         </span>
-
         <span class="en">
-          Buyer adds multiple products in one request.
+          Buyer adds all required products in one request.
         </span>
-
       </div>
 
       <div class="step">
-
-        <div class="step-number">
-          2
-        </div>
-
+        <div class="step-number">2</div>
         <span class="ar">
           نوصل الطلب لموردين مناسبين في جدة.
         </span>
-
         <span class="en">
           We connect the request with suitable Jeddah suppliers.
         </span>
-
       </div>
 
       <div class="step">
-
-        <div class="step-number">
-          3
-        </div>
-
+        <div class="step-number">3</div>
         <span class="ar">
           العميل يستقبل عروض الأسعار ويختار الأنسب.
         </span>
-
         <span class="en">
           Buyer receives quotations and chooses the best option.
         </span>
-
       </div>
 
     </div>
@@ -1981,7 +1398,6 @@
 </a>
 
 <footer>
-
   <span class="ar">
     © 2026 تسويمة - منصة تسعير منتجات التغليف في جدة
   </span>
@@ -1989,7 +1405,6 @@
   <span class="en">
     © 2026 TASWIMA - Packaging Sourcing Platform in Jeddah
   </span>
-
 </footer>
 
 <script>
@@ -2003,7 +1418,6 @@
     "Hello, I would like to inquire about TASWIMA packaging services.";
 
   function getWhatsappLink() {
-
     const isEnglish =
       document.body.classList.contains("english");
 
@@ -2019,9 +1433,7 @@
   }
 
   function updateWhatsappLinks() {
-
-    const link =
-      getWhatsappLink();
+    const link = getWhatsappLink();
 
     const ids = [
       "topWhatsapp",
@@ -2032,20 +1444,15 @@
     ];
 
     ids.forEach(id => {
-
-      const element =
-        document.getElementById(id);
+      const element = document.getElementById(id);
 
       if (element) {
         element.href = link;
       }
-
     });
-
   }
 
   function updateSelectLanguage() {
-
     const isEnglish =
       document.body.classList.contains("english");
 
@@ -2053,55 +1460,30 @@
       document.querySelectorAll(".bilingual-select");
 
     selects.forEach(select => {
-
-      const currentValue =
-        select.value;
+      const currentValue = select.value;
 
       Array.from(select.options).forEach(option => {
-
-        if (
-          option.dataset.ar &&
-          option.dataset.en
-        ) {
-
+        if (option.dataset.ar && option.dataset.en) {
           option.textContent =
             isEnglish
               ? option.dataset.en
               : option.dataset.ar;
-
         }
-
       });
 
-      select.value =
-        currentValue;
-
+      select.value = currentValue;
     });
-
   }
 
   function toggleLanguage() {
-
     document.body.classList.toggle("english");
 
-    if (
-      document.body.classList.contains("english")
-    ) {
-
-      document.documentElement.lang =
-        "en";
-
-      document.documentElement.dir =
-        "ltr";
-
+    if (document.body.classList.contains("english")) {
+      document.documentElement.lang = "en";
+      document.documentElement.dir = "ltr";
     } else {
-
-      document.documentElement.lang =
-        "ar";
-
-      document.documentElement.dir =
-        "rtl";
-
+      document.documentElement.lang = "ar";
+      document.documentElement.dir = "rtl";
     }
 
     updateWhatsappLinks();
@@ -2109,7 +1491,6 @@
   }
 
   function showForm(formId) {
-
     document
       .getElementById("buyerForm")
       .classList.remove("active");
@@ -2127,11 +1508,9 @@
       .scrollIntoView({
         behavior: "smooth"
       });
-
   }
 
   function hideForms() {
-
     document
       .getElementById("buyerForm")
       .classList.remove("active");
@@ -2144,7 +1523,36 @@
       top: 0,
       behavior: "smooth"
     });
+  }
 
+  let nextProductNumber = 2;
+
+  function showNextProduct() {
+    if (nextProductNumber > 5) {
+      return;
+    }
+
+    const product =
+      document.getElementById(
+        "product" + nextProductNumber
+      );
+
+    if (product) {
+      product.classList.add("show");
+
+      product.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }
+
+    nextProductNumber++;
+
+    if (nextProductNumber > 5) {
+      document
+        .getElementById("addProductBtn")
+        .style.display = "none";
+    }
   }
 
   updateWhatsappLinks();
@@ -2153,4 +1561,4 @@
 </script>
 
 </body>
-    </html>
+            </html>
